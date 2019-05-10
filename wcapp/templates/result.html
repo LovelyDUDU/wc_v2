@@ -1,0 +1,27 @@
+{%extends 'base.html' %}
+{%block content%}
+<!--파일 요소-->
+<div align="center" style="padding: 100px 1px 2px 3px;">
+    <body>
+        <h1>글자수는 총 {{totalcount}}개 입니다!</h1>
+        <br>
+        
+        {%if full == "" %}
+            <br><br>
+            <h1>아무 내용도 입력하지 않았습니다.</h1>
+        {%else %}
+            <h2>입력한 내용은?</h2>
+            {{full}}
+            <div style="padding: 50px 1px 2px 3px;"></div>
+            <h2>각 글자별 개수는?</h2>
+            {% for word, howmany in dictionary%}
+            {{word}} : {{howmany}}
+            <br>
+            {%endfor%}
+        {%endif%}
+        <div style="padding: 70px 1px 2px 3px;"></div>
+        <a href="{%url 'index' %}" style="text-decoration: none; color:white; font-size:20px;">다시 입력하러가기!</a>
+        <div style="padding: 100px 1px 2px 3px;"></div>
+    </body>
+</div>
+{%endblock%}

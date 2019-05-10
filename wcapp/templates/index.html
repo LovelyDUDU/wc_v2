@@ -1,0 +1,15 @@
+{%extends 'base.html' %}
+{%block content%}
+<!--파일요소-->
+<div align="center" style="padding: 100px 1px 2px 3px;">
+    <body>
+        <h1 style="font-weight:bold">글자수 자르기</h1>
+        <br>
+        <form action="{%url 'result'%}"> <!--urls의 result를 가져옴-->
+            <textarea name="fulltext" id="" cols="50" rows="20" placeholder="자르고자 하는 내용을 입력하세요!"></textarea>
+            <br>
+            <input type="submit" class="btn btn-light" value="자르기!" style="font-weight:bold">
+        </form>
+    </body>
+</div>
+{%endblock%}
